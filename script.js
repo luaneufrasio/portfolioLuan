@@ -1,6 +1,4 @@
-// Carregamento DOM
 document.addEventListener("DOMContentLoaded", () => {
-  // Botão de Menu mobile
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
 
@@ -10,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinks.classList.toggle("active");
     });
 
-    // Fechar o menu ao clicar
     const navItems = document.querySelectorAll(".nav-links a");
     navItems.forEach((item) => {
       item.addEventListener("click", () => {
@@ -20,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Typing effect
   const typedTextElement = document.querySelector(".typed-text");
   if (typedTextElement) {
     const words = ["Fullstack", "Frontend", "Backend", "Web"];
@@ -44,21 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!isDeleting && charIndex === currentWord.length) {
         isDeleting = true;
-        typingSpeed = 1000; // Pause at end of word
+        typingSpeed = 1000; 
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
-        typingSpeed = 500; // Pause before starting new word
+        typingSpeed = 500; 
       }
 
       setTimeout(type, typingSpeed);
     }
 
-    // Start the typing effect
     setTimeout(type, 1000);
   }
 
-  // Scroll animation for sections
   const sections = document.querySelectorAll("section");
   const navItems = document.querySelectorAll(".nav-links a");
 
@@ -81,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Header scroll effect
     const header = document.querySelector("header");
     if (header) {
       if (window.scrollY > 100) {
@@ -94,26 +87,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+    //* EM BREVE FUNCIONALIDADE DO FORMULÁRIO *//
   // Envio de formulário
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+  // const contactForm = document.getElementById("contactForm");
+  // if (contactForm) {
+  //   contactForm.addEventListener("submit", (e) => {
+  //     e.preventDefault();
 
-      // pegar do html os campos a serem preenchidos
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+  //     // pegar do html os campos a serem preenchidos
+  //     const name = document.getElementById("name").value;
+  //     const email = document.getElementById("email").value;
+  //     const message = document.getElementById("message").value;
 
-      // Quando for enviado os dados no formulário resetar os campos
-      alert(`Obrigado ${name}! Sua mensagem foi enviada com sucesso.`);
+  //     // Quando for enviado os dados no formulário resetar os campos
+  //     alert(`Obrigado ${name}! Sua mensagem foi enviada com sucesso.`);
 
-      // Reseta formulário
-      contactForm.reset();
-    });
-  }
+  //     // Reseta formulário
+  //     contactForm.reset();
+  //   });
+  // }
 
-  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
